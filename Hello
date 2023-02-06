@@ -1,0 +1,68 @@
+
+#VScode
+def isAnagram( s: str, t: str) -> bool:
+        res = 'true'
+        freq1 = {}
+        freq2 = {}
+        for i in s:
+            if i in freq1:
+                freq1[i] += 1
+            else:
+                freq1[i] = 1
+
+        for i in t:
+            if i in freq2:
+                freq2[i] += 1
+            else:
+                freq2[i] = 1
+
+        for i in freq1:
+            if i not in freq2:
+                res = 'false'
+            elif freq1[i] != freq2[i]:
+                res = 'false'
+            
+        for i in freq2:
+            if i not in freq1:
+                res = 'false'
+            elif freq2[i] != freq1[i]:
+                res = 'false'
+        
+        return res
+
+s = 'rat'
+t = 'car'
+isAnagram(s,t)
+
+#Leetcode
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        res = 'true'
+        freq1 = {}
+        freq2 = {}
+        
+        for i in s:
+            if i in freq1:
+                freq1[i] += 1
+            else:
+                freq1[i] = 1
+
+        for i in t:
+            if i in freq2:
+                freq2[i] += 1
+            else:
+                freq2[i] = 1
+
+        for i in freq1:
+            if i not in freq2:
+                res = 'false'
+            elif freq1[i] != freq2[i]:
+                res = 'false'
+            
+        for i in freq2:
+            if i not in freq1:
+                res = 'false'
+            elif freq2[i] != freq1[i]:
+                res = 'false'
+        
+        return res
